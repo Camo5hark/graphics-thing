@@ -1,0 +1,13 @@
+#version 460 core
+
+in VSHOutput {
+    vec2 texcoords;
+} vshOutput;
+
+out vec4 fragColor;
+
+uniform sampler2D positionTexture;
+
+void main() {
+    fragColor = texture(positionTexture, vshOutput.texcoords);
+}
